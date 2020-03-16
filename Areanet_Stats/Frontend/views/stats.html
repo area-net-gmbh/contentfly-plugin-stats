@@ -1,0 +1,75 @@
+<div class="row header" data-block="header">
+    <div class="col-lg-2  sidebar-header ">
+        <h3>&nbsp;<br><small>Analysen</small></small></h3>
+    </div>
+    <div class="col-lg-9  ">
+        <div class="col-xl-2">
+            <h3>Statistik<br>
+                <small>{{vm.mode.label}}</small>
+            </h3>
+        </div>
+        <div class="col-xl-4">
+            <p>Nach Zeit</p>
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-click="vm.loadData()" ng-model="vm.filterTime" uib-btn-radio="'0'">Gesamt</label>
+                <label class="btn btn-primary" ng-click="vm.loadData()" ng-model="vm.filterTime" uib-btn-radio="'1'">Aktueller Monat</label>
+                <label class="btn btn-primary" ng-click="vm.loadData()" ng-model="vm.filterTime" uib-btn-radio="'2'">Letzter Monat</label>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <p>Nach Gerät</p>
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-click="vm.loadData()" ng-model="vm.filterDevice" uib-btn-radio="'0'">Alle</label>
+                <label class="btn btn-primary" ng-click="vm.loadData()" ng-model="vm.filterDevice" uib-btn-radio="'ios'">iOS</label>
+                <label class="btn btn-primary" ng-click="vm.loadData()" ng-model="vm.filterDevice" uib-btn-radio="'android'">Android</label>
+            </div>
+        </div>
+    </div>
+    <
+</div>
+
+
+<div class="row">
+    <div class="col-lg-2  sidebar ">
+        <ul class="stats-navigation">
+            <li ng-repeat="mode in vm.modes" ng-click="vm.setMode(mode)" ng-class="{'stats-active': mode.key == vm.mode.key}">{{mode.label}}</li>
+        </ul>
+    </div>
+    <div class="col-lg-5  ">
+        <div class="form-loading" ng-show="!vm.dataUsage && !vm.dataView && vm.isLoading">
+            <div class="loader-inner ball-pulse">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p>Daten werden geladen...</p>
+        </div>
+
+        <table class="stats-overview" ng-if="vm.dataUsage">
+            <tr>
+                <th>Eindeutige Benutzer</th>
+                <td><b>{{vm.dataUsage.users}}</b></td>
+            </tr>
+            <tr>
+                <td class="note" colspan="2">Anzahl der eindeutigen Benutzer, die die App verwendet haben.</td>
+            </tr>
+            <tr>
+                <th>Nutzung</th>
+                <td><b>{{vm.dataUsage.views}}</b></td>
+            </tr>
+            <tr>
+                <td class="note" colspan="2">Anzahl, wie oft die App durch diese Benutzer ingesamt geöffnet und genutzt wurde.</td>
+            </tr>
+        </table>
+
+        <table class="stats-overview stats-list" ng-if="vm.dataView">
+            <tr ng-repeat="item in vm.dataView">
+                <th>{{item.label}}</th>
+                <td class="left">{{item.reference}}</td>
+                <td>{{item.views}}</td>
+            </tr>
+        </table>
+
+        <p ng-if="!vm.dataUsage && (!vm.dataView || !vm.dataView.length) && !vm.isLoading">Für diese Auswahl sind leider keine Daten verfügbar.</p>
+    </div>
+</div>

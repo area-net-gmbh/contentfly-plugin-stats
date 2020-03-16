@@ -1,0 +1,39 @@
+.stats-navigation li{
+    cursor: pointer;
+}
+
+.stats-active{
+    font-weight: bold;
+}
+
+.stats-overview{
+    width:100%;
+}
+
+.stats-overview th{
+
+ }
+
+.stats-overview td{
+    text-align:right;
+}
+
+.stats-overview td.left{
+    text-align:left;
+}
+
+
+.stats-overview td.note{
+    text-align:left;
+    font-style: italic;
+    padding-bottom:20px;
+    border-top:1px solid #666666;
+}
+
+.stats-list td, .stats-list th{
+    border-bottom:1px solid #666666;
+}
+
+.stats-list th{
+
+}
