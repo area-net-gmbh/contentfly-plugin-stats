@@ -11,9 +11,9 @@ class StatsPlugin extends Plugin
         $this->useORM();
         $this->useFrontend();
 
-        $this->addBlock('INDEX_NAVIGATION_ENTITIES_SUB_PREPEND', '/blocks/navigation.html');
+        $this->addBlock('INDEX_NAVIGATION_ADMIN_SUB_PREPEND', '/blocks/navigation.html');
 
-        $this->addRoute('areanetstats', 'views/stats.html', 'AreanetStatsCtrl');
+        $this->addRoute('/areanetstats', 'views/stats.html', 'AreanetStatsCtrl');
         $this->addJSFile('scripts/stats.controller.js');
 
         $this->addCSSFile('/styles/plugin.css');

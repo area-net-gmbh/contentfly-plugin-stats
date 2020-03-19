@@ -10,11 +10,11 @@ Plugin zur statistischen Auswertungen von Zugriffen
 
 ## Installation
 
-Download und Entpacken des Statistics-Ordners im plugin-Ordner: _plugins/Areanet_Statistics_
+Download und Entpacken des Statistics-Ordners im plugin-Ordner: _plugins/Areanet_Stats_
 
 **Registrieren des Plugins in der app.php**
 ```
-$app['pluginManager]->register('plugins/Areanet_Statistics');
+$app['pluginManager]->register('plugins/Areanet_Stats');
 ```
 
 
