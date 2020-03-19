@@ -5,8 +5,8 @@
 
 ## Beschreibung
 
-Plugin zur statistischen Auswertungen von Zugriffen
-
+Plugin zur statistischen Auswertungen von Zugriffen im Zusammenhang mit dem 
+Contenfly Ionic SDK in mobilen Apps.
 
 ## Installation
 
@@ -17,6 +17,11 @@ Download und Entpacken des Statistics-Ordners im plugin-Ordner: _plugins/Areanet
 $app['pluginManager]->register('plugins/Areanet_Stats');
 ```
 
+## Kompatibilität
+
+* Version 1.0.0
+** Contentfly ab 1.5.2
+** Ionic SDK ab 1.1.3
 
 # Die Contentfly Plattform ist ein Produkt der AREA-NET GmbH
 
